@@ -23,6 +23,11 @@ let App = () => {
   const logoutHandler = () => {
     signOut(auth).then(() => {
       // Sign-out successful.
+      toastRef.current.show({
+        severity: "success",
+        summary: "Success Message",
+        detail: "Logout successfull",
+      });
       setIsLoggedIn(false);
       window.localStorage.removeItem("isLoggedIn");
       

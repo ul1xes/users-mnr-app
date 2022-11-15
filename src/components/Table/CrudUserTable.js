@@ -9,6 +9,7 @@ import { InputTextarea } from "primereact/inputtextarea";
 import { RadioButton } from "primereact/radiobutton";
 import { Dialog } from "primereact/dialog";
 import { InputText } from "primereact/inputtext";
+import { Tooltip } from 'primereact/tooltip';
 
 import "./CrudUserTable.css";
 
@@ -284,6 +285,8 @@ const DataTableCrudDemo = () => {
           icon="pi pi-plus"
           className="p-button-success mr-2"
           onClick={openNew}
+          tooltip = "Add new user"
+          tooltipOptions={{showDelay: 300, hideDelay: 100, position: "left"}}
         />
         <Button
           label="Delete"
@@ -291,6 +294,8 @@ const DataTableCrudDemo = () => {
           className="p-button-danger"
           onClick={confirmDeleteSelected}
           disabled={!selectedProducts || !selectedProducts.length}
+          tooltip = "Delete selected users"
+          tooltipOptions={{showDelay: 300, hideDelay: 100, position: "right"}}
         />
       </React.Fragment>
     );
@@ -303,11 +308,15 @@ const DataTableCrudDemo = () => {
           icon="pi pi-pencil"
           className="p-button-rounded p-button-success mr-2"
           onClick={() => editProduct(rowData)}
+          tooltip = "Edit user"
+          tooltipOptions={{showDelay: 300, hideDelay: 100, position: "top"}}
         />
         <Button
           icon="pi pi-trash"
           className="p-button-rounded p-button-warning"
           onClick={() => confirmDeleteProduct(rowData)}
+          tooltip = "Delete user"
+          tooltipOptions={{showDelay: 300, hideDelay: 100, position: "top"}}
         />
       </React.Fragment>
     );
